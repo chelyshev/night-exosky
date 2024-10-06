@@ -1,0 +1,11 @@
+ipywidgets==8.1.5
+ipython==8.18.1
+astroquery==0.4.7
+matplotlib==3.9.2
+pyvo==1.5.2
+timebudget
+pyjs9==3.8
+python-socketio==5.11.4
+PySide2==5.15.2.1
+PyAstronomy==0.22.0
+trianglesolver==1.2

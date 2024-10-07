@@ -1,1 +1,4 @@
 .idea
+*.vot
+*.fits
+__pycache__/

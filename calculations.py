@@ -1,13 +1,7 @@
-import math
-
 import numpy as np
-
 from kelvin_to_rgb import convert_K_to_RGB
-
-# from __future__ import print_function, division
 from PyAstronomy import pyasl
 from trianglesolver import solve, degree
-from math import sqrt
 
 def apparent_to_absolute_magnitude(dist_pc, app_mag):
     # dist = 10.0 if dist_pc <= 0.0 else dist_pc
@@ -36,15 +30,15 @@ def convert_teff_to_rgb(t_eff):
         stellar_color[i] = convert_K_to_RGB(t_eff[i].value)
     return stellar_color
 
-def angular_distance_between_stars_and_exo_pl(alpha_A, delta_A, alpha_B, delta_B):
+def angular_distance_between_stars_and_exo_pl(ra1, dec1, ra2, dec2):
     # https://en.wikipedia.org/wiki/Angular_distance
     # https://pyastronomy.readthedocs.io/en/latest/pyaslDoc/aslDoc/angularDistance.html
 
-    theta = pyasl.getAngDist(alpha_A, delta_A, alpha_B, delta_B)
+    # theta = pyasl.getAngDist(ra1, dec1, ra2, dec2)
 
-    # theta = np.zeros(len(ra1))
-    # for i in range(len(ra1)):
-    #     theta[i] = pyasl.getAngDist(ra1[i], dec1[i], ra2, dec2)
+    theta = np.zeros(len(ra1))
+    for i in range(len(ra1)):
+        theta[i] = pyasl.getAngDist(ra1[i], dec1[i], ra2, dec2)
 
     return theta
 

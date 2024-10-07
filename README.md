@@ -1,5 +1,12 @@
 # Night-ExoSky
 
+### Requirements
+
+- Hard drive: ~500 MB of free disk space (including downloaded datasets)
+- RAM: 2-4 GB
+- CPU: Intel Core i5 3rd Gen. 4+ cores recommended
+- Operating system: Linux / Windows 7+ / macOS
+
 ### Installation:
 
 ```shell script
@@ -12,13 +19,15 @@ pip install -r requirements.txt
 ```shell script
 python download_data.py
 ```
+- Note: download time ~5 minutes
 
 ### Run
 
 ```shell script
 python main.py
 ```
-
+- Note: loading time of the Gaia "Light" dataset can be about 1 minute 
+- Warning: loading time of the Gaia "Big" dataset can be about 10 minutes 
 
 ### References
 

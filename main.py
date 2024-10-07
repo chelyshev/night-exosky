@@ -160,19 +160,6 @@ class MainWindow(QMainWindow):
             t_eff = self.gaia_tbl['teff_gspphot']
             self.stellar_color = convert_teff_to_rgb(t_eff)
 
-            fig, ax = plt.subplots(figsize=(18, 9), constrained_layout=True)
-            ax.patch.set_facecolor('black')
-            plt.title(label=label)
-            ax.scatter(self.night_exosky_coords_galactic.l.degree, self.night_exosky_coords_galactic.b.degree,
-                       s=self.pseudosize, color=self.stellar_color, marker='.',
-                       linewidths=0, edgecolors='face')
-            plt.xlabel('Galactic Longitude')
-            plt.ylabel('Galactic Latitude')
-            ax.set_xlim(0, 360)
-            ax.set_ylim(-90, 90)
-            ax.grid(ls='solid', lw=.1)
-            plt.show()
-
             self.sc.axes.cla()
             self.sc.axes.set_title(label=label)
             self.sc.axes.scatter(self.night_exosky_coords_galactic.l.degree, self.night_exosky_coords_galactic.b.degree,
@@ -253,17 +240,17 @@ class MainWindow(QMainWindow):
             self.sc.draw()
 
 
-            fig, ax = plt.subplots(figsize=(18, 9), constrained_layout=True)
-            ax.patch.set_facecolor('black')
-            plt.title(label=label)
+            # fig, ax = plt.subplots(figsize=(18, 9), constrained_layout=True)
+            # ax.patch.set_facecolor('black')
+            # plt.title(label=label)
 
 
             # Galactic coords in Longitude(l), Latitude(b) degrees
             # print(self.night_exosky_coords_galactic)
-            ax.scatter(self.night_exosky_coords_galactic.l.degree, self.night_exosky_coords_galactic.b.degree, s=pseudosize, color=self.stellar_color, marker='.',
-                             linewidths=0, edgecolors='face')
-            plt.xlabel('Galactic Longitude')
-            plt.ylabel('Galactic Latitude')
+            # ax.scatter(self.night_exosky_coords_galactic.l.degree, self.night_exosky_coords_galactic.b.degree, s=pseudosize, color=self.stellar_color, marker='.',
+            #                  linewidths=0, edgecolors='face')
+            # plt.xlabel('Galactic Longitude')
+            # plt.ylabel('Galactic Latitude')
             # ax.set_xlim(0, 360)
             # ax.set_ylim(-90, 90)
 
@@ -287,8 +274,8 @@ class MainWindow(QMainWindow):
             # plt.xlabel('pc')
             # plt.ylabel('pc')
 
-            ax.grid(ls='solid', lw=.1)
-            plt.show()
+            # ax.grid(ls='solid', lw=.1)
+            # plt.show()
 
 
 if __name__ == '__main__':
